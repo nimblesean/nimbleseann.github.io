@@ -609,47 +609,40 @@ header .container .content .extra-nav a:hover span {
   font-size: 3rem;
 }
 
-.project .container .content .project-area {
+.project .container .content .project-area .projects .image-container {
   position: relative;
-  display: flex;
-  flex-direction: column; /* Ubah dari row ke column */
-  height: auto; /* Sesuaikan tinggi agar elemen dapat ditampilkan dengan baik */
-  gap: 1rem; /* Jarak antar elemen */
-}
-
-.project .container .content .project-area .projects {
-  position: relative;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column; /* Ubah dari row ke column untuk konten dalam proyek */
-  align-items: center; /* Pusatkan konten secara horizontal */
-  justify-content: center; /* Pusatkan konten secara vertikal */
-  width: 100%; /* Ubah lebar menjadi 100% */
-  height: auto; /* Sesuaikan tinggi agar elemen dapat ditampilkan dengan baik */
-  background: var(--gray);
-  border-radius: 16px; /* Sesuaikan radius jika perlu */
-  overflow: hidden;
-  filter: grayscale(100);
+  width: 100%;
+  overflow: hidden; /* Pastikan gambar tidak melampaui kontainer */
 }
 
 .project .container .content .project-area .projects img {
-  width: 100%; /* Pastikan gambar memenuhi lebar proyek */
-  height: auto; /* Sesuaikan tinggi gambar */
-  border-radius: 16px 16px 0 0; /* Radius untuk bagian atas gambar */
+  width: 100%;
+  height: auto;
+  border-radius: 16px 16px 0 0;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Tambahkan transisi untuk zoom dan opacity */
 }
 
 .project .container .content .project-area .projects .desc {
-  padding: 1rem; /* Tambahkan padding untuk konten deskripsi */
-  text-align: center; /* Pusatkan teks */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  opacity: 0; /* Sembunyikan deskripsi secara default */
+  transition: opacity 0.3s ease; /* Tambahkan transisi */
 }
 
-.project .container .content .project-area .projects .desc h1 {
-  font-size: 1.5rem; /* Sesuaikan ukuran font judul */
-  margin-bottom: 0.5rem; /* Jarak bawah judul */
+.project .container .content .project-area .projects:hover img {
+  transform: scale(1.1); /* Zoom in saat hover */
+  opacity: 0.5; /* Ubah opacity gambar saat hover */
 }
 
-.project .container .content .project-area .projects .desc p {
-  font-size: 1rem; /* Sesuaikan ukuran font deskripsi */
+.project .container .content .project-area .projects:hover .desc {
+  opacity: 1; /* Tampilkan deskripsi saat hover */
 }
 
 .project .container .content .project-area .projects:hover .desc {
