@@ -612,57 +612,44 @@ header .container .content .extra-nav a:hover span {
 .project .container .content .project-area {
   position: relative;
   display: flex;
-  height: 650px;
-  gap: 1rem;
-}
-
-.project .container .content .project-area:hover .projects:not(:hover) img {
-  filter: brightness(100%);
-  transition: 0.3s linear;
+  flex-direction: column; /* Ubah dari row ke column */
+  height: auto; /* Sesuaikan tinggi agar elemen dapat ditampilkan dengan baik */
+  gap: 1rem; /* Jarak antar elemen */
 }
 
 .project .container .content .project-area .projects {
   position: relative;
   cursor: pointer;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 33%;
-  height: 100%;
+  flex-direction: column; /* Ubah dari row ke column untuk konten dalam proyek */
+  align-items: center; /* Pusatkan konten secara horizontal */
+  justify-content: center; /* Pusatkan konten secara vertikal */
+  width: 100%; /* Ubah lebar menjadi 100% */
+  height: auto; /* Sesuaikan tinggi agar elemen dapat ditampilkan dengan baik */
   background: var(--gray);
-  border-radius: 64px;
+  border-radius: 16px; /* Sesuaikan radius jika perlu */
   overflow: hidden;
   filter: grayscale(100);
 }
 
 .project .container .content .project-area .projects img {
-  filter: brightness(100%);
-  width: 100%;
-  height: 100%;
-  transition: 0.3s linear;
-}
-
-.project .container .content .project-area .projects:hover img {
-  filter: brightness(30%);
+  width: 100%; /* Pastikan gambar memenuhi lebar proyek */
+  height: auto; /* Sesuaikan tinggi gambar */
+  border-radius: 16px 16px 0 0; /* Radius untuk bagian atas gambar */
 }
 
 .project .container .content .project-area .projects .desc {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.2s linear;
+  padding: 1rem; /* Tambahkan padding untuk konten deskripsi */
+  text-align: center; /* Pusatkan teks */
 }
 
 .project .container .content .project-area .projects .desc h1 {
-  font: italic bold 4rem "IBM Plex Sans", sans-serif;
+  font-size: 1.5rem; /* Sesuaikan ukuran font judul */
+  margin-bottom: 0.5rem; /* Jarak bawah judul */
 }
 
 .project .container .content .project-area .projects .desc p {
-  text-align: center;
-  width: 75%;
+  font-size: 1rem; /* Sesuaikan ukuran font deskripsi */
 }
 
 .project .container .content .project-area .projects:hover .desc {
@@ -887,6 +874,7 @@ footer .container .content .social p {
   .project .container .content .project-area {
     flex-direction: column;
     height: auto; /* Adjust height for mobile view */
+    gap: 1rem;
   }
 
   .project .container .content .project-area .projects {
