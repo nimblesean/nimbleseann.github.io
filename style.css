@@ -886,12 +886,13 @@ footer .container .content .social p {
 
   .project .container .content .project-area {
     flex-direction: column;
-    height: 650px; /* Adjust height for mobile view */
+    height: auto; /* Adjust height for mobile view */
   }
 
   .project .container .content .project-area .projects {
     width: 100%; /* Full width for mobile */
     height: auto; /* Auto height for better fit */
+    margin-bottom: 1rem;
   }
 
   .contact .container .content .title h1 {
